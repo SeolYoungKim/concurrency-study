@@ -1,18 +1,17 @@
 package com.example.stock.facade;
 
 import com.example.stock.repository.LockRepository;
-import com.example.stock.service.StockService;
-import com.example.stock.service.StockServiceForNamedLock;
+import com.example.stock.service.StockServiceForLock;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class NamedLockStockFacade {
     private final LockRepository lockRepository;
-    private final StockServiceForNamedLock stockService;
+    private final StockServiceForLock stockService;
 
     public NamedLockStockFacade(final LockRepository lockRepository,
-            final StockServiceForNamedLock stockService) {
+            final StockServiceForLock stockService) {
         this.lockRepository = lockRepository;
         this.stockService = stockService;
     }
